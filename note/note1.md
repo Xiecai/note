@@ -1,4 +1,4 @@
-###JAVA 项目国际化处理随笔记录  
+### JAVA 项目国际化处理随笔记录  
 
 @(国际化)[java, SpringMVC, IDEA]
  
@@ -13,9 +13,9 @@
 
 ----
 
-##配置
+## 配置
 
-#####spring-mvc.xmlz 中加入配置如下：
+##### spring-mvc.xmlz 中加入配置如下：
 ```xml
     <!-- 国际化资源配置,资源文件绑定器-->
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
@@ -54,7 +54,7 @@
         <property name="fallbackToSystemLocale" value="false"/>
 ```
 
-####下面加入需要语言的配置文件，注意保存文件格式为UTF_8，文件存放在目录的messages下
+#### 下面加入需要语言的配置文件，注意保存文件格式为UTF_8，文件存放在目录的messages下
 
 **message_zh_CN.properties**（中国） & **message_en_US.properties**（英国）[更多](http://www.lingoes.cn/zh/translator/langcode.htm) 这些文件的格式很简单就是 **key = value** 的组合类型于：
 
@@ -113,10 +113,10 @@
     }
 ```
 
-####至此国际化的配置就结束了
+#### 至此国际化的配置就结束了
 
 ---
-##处理记录 tips
+## 处理记录 tips
 
 1.对于开发来说需要维护一个语种一个文件，还记得之前配置中设置的**useCodeAsDefaultMessage**吗？设置它的好处就是，咱们的key可以是**中文**的。对于现在已经在线上发布的项目，起别名的key轻易的替换文字内容可能会引起不必要的bug。设置了useCodeAsDefaultMessage ，形式如：
 
@@ -128,10 +128,10 @@
 
 2.中文作为key对于中文配置**message_zh_CN.properties**来说等于无需配置，但是对于其他语种来说放到**properties**中，中文就是乱码了，那怎么处理？答案是将中文变成 **unicode** 作为 key 放到 properties 中。一段中文转换为一段**unicode**做key/value，前期这么搞还可以，后面越搞越累，越搞越乱，看着unicode一坨一坨的，乱七八糟的也不好维护，那只有把IDEA请出来帮忙了。
 
-#####在project settings - File Encoding，在标红的选项上打上勾
+##### 在project settings - File Encoding，在标红的选项上打上勾
  <div align="center"> 
- ![IDEA设置图](https://raw.githubusercontent.com/Xiecai/note/master/img/note1/IDEAConfiguration.jpg)</div>
-#####这样properties中写入中文的key就是中文的显示，然而实际为unciode。
+ <img src="https://raw.githubusercontent.com/Xiecai/note/master/img/note1/IDEAConfiguration.jpg"/></div>
+##### 这样properties中写入中文的key就是中文的显示，然而实际为unciode。
 
 3.key 中不能含 空格,等号,英文冒号 **key会失效**
 
