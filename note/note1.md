@@ -117,8 +117,11 @@
  <div align="center"> 
  ![IDEA设置图](https://raw.githubusercontent.com/Xiecai/note/master/img/note1/IDEAConfiguration.jpg)</div>
 #####这样properties中写入中文的key就是中文的显示，然而实际为unciode。
+
 3.key 中不能含 空格,等号,英文冒号 **key会失效**
+
 4.spring 标签可以加入**参数**处理 ，这样对于逻辑拼接的句子可以更好的展示处理 此时需要中文的配置文件兼容一下处理如 ：
+
 ```html
 <spring:message code="共x条记录" arguments="${pagebean.totalNum}"/>
  多参形式
@@ -130,24 +133,33 @@
                                       <input value=\"${item.endTime}\" old=\"${item.endTime}\" class=\"aa\" id=\"priceRuleSeting_endTime${vs.index}\"  onkeyup=\"value=this.value.replace(/\D+/g,'')\"/>
                                        " argumentSeparator="^"/>
 ```
+
 properties 配置如：
+
 ```properties 
   共x条记录 = 共{0}条记录
   x共x条记录 = {0}共{1}条记录
   晚上date1到date2之间对次日上午date3点前的订单不报价 = 晚上{0}到{1}之间对次日上午{2}点前的订单不报价
 ```
+
 5.spring 标签支持 el 语句 但**不支持**三元运算符 如
+
 ```html
    ${type == 1 ? <spring:message code="正常"/>:<spring:message code="失败"/>}
 ```
 6.spring 标签的参数没办法接受其他标签 如这样的形式：
+
 ```html
 <fmt:formatDate value="${order.base.startDatetimeLocal}" pattern="yyyy-MM-dd HH:mm"/>
 ```
 7.js 中不支持带参形式的spring标签 加载顺序导致
+
 8.将key符号带到翻译结果中 如: 司机/车 = driver/car 利于开发
+
 9.将系统要翻译的key全部摘到一个文件中，初期没有翻译时 可参考如下处理，便于测试:
+
 ```properties 
   你好=-你好-
 ```
+
 至此结束，谢谢观看
