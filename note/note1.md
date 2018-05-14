@@ -69,7 +69,7 @@
 <spring:message code="hello" />
 ```
 
-哪儿都能塞，标签里标签外，**javascript**中（js中有个特殊情况，下文详解）。
+哪儿都能塞，标签里标签外，**javascript**中（js中有个特殊情况）。
 
  <div align="center"> 
  <img src="https://raw.githubusercontent.com/Xiecai/note/master/img/note1/material1.png"/></div>
@@ -131,6 +131,7 @@
 ##### 在project settings - File Encoding，在标红的选项上打上勾
  <div align="center"> 
  <img src="https://raw.githubusercontent.com/Xiecai/note/master/img/note1/IDEAConfiguration.jpg"/></div>
+ 
 ##### 这样properties中写入中文的key就是中文的显示，然而实际为unciode。
 
 3.key 中不能含 空格,等号,英文冒号 **key会失效**
