@@ -1,6 +1,6 @@
 ### JAVA 项目国际化处理随笔记录  
 
-@(国际化)[java, SpringMVC, IDEA]
+@(国际化) [java, SpringMVC, IDEA]
  
  **&nbsp;&nbsp;&nbsp;项目最近需要国际化，网上教程有很多也不难，开发过程之中查阅很多资料并总结了一下，希望能帮助你。收集了些配置和设置和一些自己尝试的方法，希望对你有帮助。想写的很细很细，有的可以做参考，也可以忽略，本文的目的就是省去国际化开发的时间。**
 
@@ -15,7 +15,7 @@
 
 ## 配置
 
-##### spring-mvc.xmlz 中加入配置如下：
+##### spring-mvc.xml 中加入配置如下：
 ```xml
     <!-- 国际化资源配置,资源文件绑定器-->
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
